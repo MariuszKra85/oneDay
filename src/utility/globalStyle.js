@@ -1,7 +1,10 @@
 import { createGlobalStyle } from "styled-components";
-
+import {colors} from './colors'
 
 const GlobalStyle = createGlobalStyle`
+
+    $font-color: rgb(230, 230, 230);
+
   html {
     box-sizing: border-box;
   }
@@ -15,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: 'Montserrat';
+    background-color: ${colors.bgColor};
+    color: ${colors.fontColor};
   }
 
   button {
