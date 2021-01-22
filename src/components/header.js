@@ -1,14 +1,19 @@
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
 import Menu from "./menu"
 
-
+const StyledWrapper = styled.div`
+width: 90%;
+margin: 20px auto 0;
+`
 
 const Header = ({ siteTitle }) => <header>
-  <div>
+  <StyledWrapper>
     <p>social</p>
-  </div>
-  <Menu/>
+    <Menu/>
+  </StyledWrapper>
+  
 </header>
 
 Header.propTypes = {

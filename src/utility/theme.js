@@ -1,12 +1,8 @@
 export const theme = {
     colors:{
-        menuBgColor: '255, 255, 255, 0.8',
+        menuBgColor: '255, 255, 255, 0.7',
+        menuLinkColor: '40, 40, 40',
         primary: '#6985db',
-        imageTextBg: '0, 0, 0, 1',
-        imageTextColor: '255, 255, 255, 1',
-        borderColor: '190, 190, 190',
-        buttonBgColor: '0, 0, 0, 1',
-        buttonTextColor: '255, 255, 255, 1'
     },
     media: {
         tablet: '@media (min-width: 760px)',

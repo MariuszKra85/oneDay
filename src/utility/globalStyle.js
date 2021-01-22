@@ -3,7 +3,6 @@ import {colors} from './colors'
 
 const GlobalStyle = createGlobalStyle`
 
-    $font-color: rgb(230, 230, 230);
 
   html {
     box-sizing: border-box;
@@ -34,6 +33,9 @@ const GlobalStyle = createGlobalStyle`
   }
   a{
     text-decoration: none;
+    
   }
+
+
 `
 export default GlobalStyle
