@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: 'Montserrat';
+    font-family: 'Roboto';
     background-color: ${colors.bgColor};
     color: ${colors.fontColor};
   }
@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   button {
     padding: 0;
     cursor: pointer;
-    font-family: 'Montserrat';
+    font-family: 'Roboto';
   }
 
   ul {

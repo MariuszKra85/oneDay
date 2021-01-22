@@ -42,10 +42,12 @@ module.exports = {
             {
               family: 'Roboto',
               variants: ['300', '500', '700'],
+              subsets: ['latin']
             },
             {
               family: 'Montserrat',
               variants: ['300', '500', '700'],
+              subsets: ['latin']
             },
           ],
         },
