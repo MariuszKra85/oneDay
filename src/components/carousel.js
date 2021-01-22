@@ -5,15 +5,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 const Carousel = () => {
   var settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 1500,
     autoplay: true,
     lazyLoad: true,
-  };
+  }
  const data = useStaticQuery(graphql`
     query{
       Image: allFile(filter: {relativePath: {regex: "/carusel/"}}) {
@@ -34,7 +33,7 @@ const Carousel = () => {
     return (
       <div>
         <Slider {...settings}>
-          <Img fluid={data.Image.edges[0].node.childImageSharp.fluid}/>
+          <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-webfonts/?=fonts"><Img fluid={data.Image.edges[0].node.childImageSharp.fluid}/></a>
           
           <Img fluid={data.Image.edges[1].node.childImageSharp.fluid}/>
           
