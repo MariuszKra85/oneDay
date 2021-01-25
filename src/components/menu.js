@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import useWindowWidth from '../utility/useWindowWidht';
+import useWindowWidth from '../utility/useWindowWidth';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 
@@ -137,9 +137,42 @@ ${({theme})=> theme.media.tablet}{
 }
 }
 `
+const Button1 = styled.button`
+padding: 10px 20px;
+border: none;
+border-radius: 10px;
+color: rgb(30, 30, 30);
+background-color: orange;
+
+&:hover{
+    background: white;
+}
+`
+
+const Button2 = styled.button`
+padding: 5px 20px;
+border: none;
+border-radius: 5px;
+color: rgb(30, 30, 30);
+background-color: orange;
+`
+
+const Button3 = styled.button`
+padding: 10px 10px 0 10px;
+border: none;
+border-bottom: 2px solid orange;
+background: transparent;
+color: rgb(30, 30, 30);
+font-weight: 600;
+font-size: 24px;
+`
 
 const handleActive = (active, setActive) => {
     setActive(!active);
+}
+const onClickFun = (active, setActive, text) => {
+    handleActive(active, setActive)
+    scrollTo(`${text}`)
 }
 
 const Menu = () => {
@@ -152,11 +185,11 @@ const Menu = () => {
                 <StyledBar active={active}> </StyledBar>
             </StyledHamburger>
             <StyledMenuList active={active}>
-            <li>{windowsWidth < 600 ? (<button onClick={()=>scrollTo('#top')}>Home</button>):(<Link onClick={()=>handleActive(active, setActive)} to='#aboutMe'>Home</Link>)}</li>
-                <li>{windowsWidth < 600 ? (<button onClick={()=>scrollTo('#aboutMe')}>About Me</button>):(<Link onClick={()=>handleActive(active, setActive)} to='#aboutMe'>About Me</Link>)}</li>
-                <li><Link onClick={()=>handleActive(active, setActive)} to='#offer'>Offer</Link></li>
+                <li>{windowsWidth < 600 ? (<Button1 onClick={()=>onClickFun(active, setActive, "#top")}>Home</Button1>):(<Link onClick={()=>handleActive(active, setActive)} to='#aboutMe'>home</Link>)}</li>
+                <li>{windowsWidth < 600 ? (<Button2 onClick={()=>onClickFun(active, setActive,'#aboutMe')}>About Me</Button2>):(<Link onClick={()=>handleActive(active, setActive)} to='#aboutMe'>About Me</Link>)}</li>
+                <li>{windowsWidth < 600 ? (<Button3 onClick={()=>onClickFun(active, setActive,'#offer')}>Offer</Button3>):(<Link onClick={()=>handleActive(active, setActive)} to='#offer'>Offer</Link>)}</li>
                 <li><Link onClick={()=>handleActive(active, setActive)} to='/gallery'>Gallery</Link></li>
-                <li>{windowsWidth < 600 ? (<button onClick={()=>scrollTo('#contact')}>Contact</button>):(<Link onClick={()=>handleActive(active, setActive)} to='#contact'>Contact</Link>)}</li>
+                <li>{windowsWidth < 600 ? (<button onClick={()=>onClickFun(active, setActive,'#contact')}>Contact</button>):(<Link onClick={()=>handleActive(active, setActive)} to='#contact'>Contact</Link>)}</li>
             </StyledMenuList>
         </StyledMenu>
     ); 

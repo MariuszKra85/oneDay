@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
+
+const Marker = styled.div`
+background-color: blue;
+border: 1px solid rgba(40, 40, 40, 0.6);
+box-shadow: 3px 3px 4px rgba(40, 40, 40, 0.7);
+border-radius: 50%;
+width:20px;
+height:20px;
+position: relative;
+p{
+  white-space: nowrap;
+  position: absolute;
+  left: -15px;
+  bottom: -30px;
+}
+`
  
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const AnyReactComponent = ({ text }) => <Marker><p>{text}</p></Marker>;
 
 const StyledMapWrapper = styled.div`
 height: 50vh;
@@ -31,7 +47,7 @@ class Map extends Component {
           <AnyReactComponent
             lat={53.70212}
             lng={-1.41691}
-            text="My Marker"
+            text="We are here!"
           />
         </GoogleMapReact>
       </StyledMapWrapper>
