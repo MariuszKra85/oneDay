@@ -1,6 +1,8 @@
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import useWindowWidth from '../utility/useWindowWidht';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 
 const StyledMenu = styled.div`
@@ -142,16 +144,19 @@ const handleActive = (active, setActive) => {
 
 const Menu = () => {
     let [active, setActive] = useState(false);
+    let windowsWidth = useWindowWidth();
     return (
         <StyledMenu>
+            
             <StyledHamburger active={active} onClick={()=>handleActive(active, setActive)} aria-label="Menu">
                 <StyledBar active={active}> </StyledBar>
             </StyledHamburger>
             <StyledMenuList active={active}>
-                <li><Link onClick={()=>handleActive(active, setActive)} to='/about'>About Me</Link></li>
-                <li><Link onClick={()=>handleActive(active, setActive)} to='/article'>Article</Link></li>
+            <li>{windowsWidth < 600 ? (<button onClick={()=>scrollTo('#top')}>Home</button>):(<Link onClick={()=>handleActive(active, setActive)} to='#aboutMe'>Home</Link>)}</li>
+                <li>{windowsWidth < 600 ? (<button onClick={()=>scrollTo('#aboutMe')}>About Me</button>):(<Link onClick={()=>handleActive(active, setActive)} to='#aboutMe'>About Me</Link>)}</li>
+                <li><Link onClick={()=>handleActive(active, setActive)} to='#offer'>Offer</Link></li>
                 <li><Link onClick={()=>handleActive(active, setActive)} to='/gallery'>Gallery</Link></li>
-                <li><Link onClick={()=>handleActive(active, setActive)} to='/contact'>Contact</Link></li>
+                <li>{windowsWidth < 600 ? (<button onClick={()=>scrollTo('#contact')}>Contact</button>):(<Link onClick={()=>handleActive(active, setActive)} to='#contact'>Contact</Link>)}</li>
             </StyledMenuList>
         </StyledMenu>
     ); 

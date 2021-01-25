@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto';
     background-color: ${colors.bgColor};
     color: ${colors.fontColor};
+    scroll-behavior: smooth;
   }
 
   button {

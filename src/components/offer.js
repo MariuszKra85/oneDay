@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.section`
 width: 90%;
 margin: 20px auto 0;
 `
@@ -9,7 +9,7 @@ margin: 20px auto 0;
 
 const Offer = () => {
     return (
-        <StyledWrapper>
+        <StyledWrapper id="offer">
             <h1>Kompleksowa realizacja sesji zdjęciowych od A do Z</h1>
             <p>
                 Oprócz wynajmu przestrzeni również realizujemy sesję zdjęciowe. Wykonamy dla Ciebie zdjęcia biznesowe i wizerunkowe, lookbooka, portrety, zdjęcia beauty. Za fotografie odpowiada nasz fotograf Wojciech Buczyński.
