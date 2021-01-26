@@ -21,15 +21,14 @@ if(icon=== 'linkedin'){
 const StyledSection = styled.section`
 width: 90%;
 margin: 0 auto;
+text-align: center;
 `
-/*
 
-to odnosi sie do ikonek socialnych
-
-*/
 const StyledSocial = styled.div`
 display: flex;
-margin: 20px 0;
+margin: 20px 0 ;
+justify-content: center;
+
 
 a{
     margin: 0 10px;

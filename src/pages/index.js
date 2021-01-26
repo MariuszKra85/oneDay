@@ -8,11 +8,14 @@ import Offer from "../components/offer"
 import Contact from "../components/contact"
 import Map from "../components/map"
 import PhotoSamp from '../components/photoSamp'
+import { Link } from "gatsby"
+
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Image/>
+    <Link to="/gallery">gallery</Link>
     <AboutMe/>
     <Carousel/>
     <Offer/>

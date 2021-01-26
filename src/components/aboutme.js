@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledWrapper = styled.section`
 width: 90%;
 margin: 20px auto 0;
+text-align: center;
 `
 
 const AboutMe = () => {

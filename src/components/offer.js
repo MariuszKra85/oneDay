@@ -7,6 +7,7 @@ width: 90%;
 margin: 20px auto 0;
 position: relative;
 padding: 20px 0 20px;
+text-align: center;
 
 &::after{
     width: 100vw;
@@ -41,7 +42,6 @@ const Offer = () => {
     )
     return (
         <StyledWrapper id="offer" bg={file.childImageSharp.fluid.src}>
-            {console.log(file.childImageSharp.fluid.src)}
             <h1>Kompleksowa realizacja sesji zdjęciowych od A do Z</h1>
             <p>
                 Oprócz wynajmu przestrzeni również realizujemy sesję zdjęciowe. Wykonamy dla Ciebie zdjęcia biznesowe i wizerunkowe, lookbooka, portrety, zdjęcia beauty. Za fotografie odpowiada nasz fotograf Wojciech Buczyński.
