@@ -24,16 +24,18 @@ const StyledSection = styled.section`
 width: 90%;
 margin: 0 auto;
 text-align: center;
+h2{
+    margin-bottom: 40px;
+}
 `
 
 const StyledSocial = styled.div`
 display: flex;
-margin: 20px 0 ;
+margin: 20px 0;
 justify-content: center;
 
-s
 a{
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 `
@@ -44,7 +46,7 @@ const Contact = () => {
         <Layout>
         <StyledSection id="contact">
             <div>
-                <h2>Contact</h2>
+                <h2>Kontakt</h2>
                 <h3>Studio One Day</h3>
                 <p>Norbert Sokolowski</p>
             </div>

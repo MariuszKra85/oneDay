@@ -14,15 +14,48 @@ height: 60px;
 `
 const StyledDiv = styled.div`
 width: 60px;
+
+&::before{
+  z-index:101;
+  width: 38px;
+  height: 38px;
+  content: "";
+position: fixed;
+border-radius: 50%;
+top: 31px;
+left: 21px;
+background-color: rgba(10,10,10, 0.6);
+}
+
 `
 
+const SocialIcon = styled.div`
+z-index:102;
+position: fixed;
+top: 30px;
+left: 20px;
+width: 40px;
+height: 40px;
+background-color: orange;
+mask: ${({icon}) => {if(icon === 'facebook'){
+    return( `url(${facebook}) no-repeat center `)
+}
+if(icon=== 'linkedin'){
+    return(`url(${linkedin}) no-repeat center`)
+}else{
+    return(`url(${twitter}) no-repeat center`) 
+} 
+}};
 
+
+
+`
 
 
 const Header = () => <header id="top">
   <StyledWrapper>
 <StyledDiv>
-  <Image/>
+  <a href="https://www.facebook.com/ONE-DAY-107150937749715/"><SocialIcon icon='facebook'/></a>
 </StyledDiv>
     <Menu/>
   </StyledWrapper>

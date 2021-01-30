@@ -67,6 +67,11 @@ margin: 50px 0 80px;
     <a href="https://www.facebook.com/norbert.sokolowski.104"><SocialIcon icon='linkedin'/></a>
     <a href="https://www.facebook.com/norbert.sokolowski.104"><SocialIcon icon=''/></a>
     </StyledSocialWrapper>
+    <address>
+      <h3>Studio One Day</h3>
+      <p>Tel:07368 424514</p>
+      <p>Mail: <a href="mailto:oneday.studio.uk@gmail.com">oneday.studio.uk@gmail.com</a></p>
+    </address>
         © {new Date().getFullYear()}, created by
         {` `}
         <a href="https://www.gatsbyjs.com">Mariusz Krawczyk</a>

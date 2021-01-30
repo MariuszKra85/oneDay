@@ -7,7 +7,7 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const StyledMenu = styled.div`
 
-margin: 20px 0 0 10px;
+margin: 10px 0 0 10px;
 display: flex;
 flex-direction: row;
 

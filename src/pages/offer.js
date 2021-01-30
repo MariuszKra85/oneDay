@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
+import Image from '../components/image';
 import Layout from '../components/layout';
 
 const StyledWrapper = styled.section`
@@ -8,7 +9,13 @@ width: 90%;
 margin: 20px auto 0;
 position: relative;
 padding: 20px 0 20px;
-text-align: center;
+
+h4{
+  margin: 30px 0 10px;
+}
+p{
+  margin-bottom: 30px;
+}
 
 &::after{
     width: 100vw;
@@ -27,8 +34,8 @@ text-align: center;
 `
 
 const StyledList = styled.ul`
-width: 100px;
-margin: 0 auto;
+width: 200px;
+margin: 10px 0 35px 20px;
 text-align: left;
 `
 
@@ -49,6 +56,7 @@ const Offer = () => {
     )
     return (
         <Layout>
+          <Image/>
         <StyledWrapper id="offer" bg={file.childImageSharp.fluid.src}>
             <h2>Oferta:</h2>
             <p>
