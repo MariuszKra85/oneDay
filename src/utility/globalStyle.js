@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     padding: 0;
+    color: ${colors.fontColor};
     cursor: pointer;
     font-family: 'Roboto';
   }

@@ -2,8 +2,12 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 import React from 'react';
 import styled from 'styled-components';
 
-const createButton = (text, id) =>{
-return <button onClick={()=>scrollTo(id)}>{text}</button>
+const createButton = (text, id, reset) =>{
+return <button onClick={()=>{
+    scrollTo(id);
+    reset()
+
+}}>{text}</button>
 }
 
 const StyledWrapper = styled.div`
@@ -16,6 +20,7 @@ flex-direction: column;
 
 button{
     margin: 10px 0;
+    color: rgb(20, 20, 20);
     border: none;
     border-radius: 50%;
     width: 43px;
@@ -26,13 +31,13 @@ button{
 
 `
 
-const GalleryMenu = () => {
+const GalleryMenu = ({reset}) => {
     
     return (
         <StyledWrapper>
-            {createButton("Land", "#land")}
-            {createButton("Port", "#port")}
-            {createButton("Fam", "#family")}
+            {createButton("Land", "#land", reset)}
+            {createButton("Port", "#port", reset)}
+            {createButton("Fam", "#family", reset)}
         </StyledWrapper>
     );
 }

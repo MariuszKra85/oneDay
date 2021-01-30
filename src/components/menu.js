@@ -111,73 +111,30 @@ transform: ${({active}) => active ? `translateX(0)` : `translateX(-140vw)`};
 
 li{
     padding: 20px;
-    a{
-        font-size: 20px;
-        border-bottom: 2px solid rgba(0, 0, 0, 0);
-        transition: all 0.4s;
-        &:hover{
-            border-bottom: 2px solid rgba(0, 0, 0, 1);
-        }
-    }
 }
 
-${({theme})=> theme.media.tablet}{
-    position: relative;
-    width: 70%;
-    height: 50px;
-    flex-direction: row;
-    justify-content: start;
-    margin-left: 30px;
-    transform: translateX(0);
-    li{
-        a{
-            font-size: 24px;
-            white-space: nowrap;
-    }
-}
-}
-`
-const Button1 = styled.button`
-padding: 10px 20px;
-border: none;
-border-radius: 10px;
-color: rgb(30, 30, 30);
-background-color: orange;
-
-&:hover{
-    background: white;
-}
 `
 
-const Button2 = styled.button`
-padding: 5px 20px;
-border: none;
-border-radius: 5px;
-color: rgb(30, 30, 30);
-background-color: orange;
-`
-
-const Button3 = styled.button`
+const StyledLink = styled(Link)`
 padding: 10px 10px 0 10px;
 border: none;
 border-bottom: 2px solid orange;
 background: transparent;
 color: rgb(30, 30, 30);
 font-weight: 600;
-font-size: 24px;
+font-size: 28px;
+transition: all 0.4s;
+        &:hover{
+            border-bottom: 2px solid rgba(0, 0, 0, 1);
+        }
 `
 
 const handleActive = (active, setActive) => {
     setActive(!active);
 }
-const onClickFun = (active, setActive, text) => {
-    handleActive(active, setActive)
-    scrollTo(`${text}`)
-}
 
 const Menu = () => {
     let [active, setActive] = useState(false);
-    let windowsWidth = useWindowWidth();
     return (
         <StyledMenu>
             
@@ -185,11 +142,12 @@ const Menu = () => {
                 <StyledBar active={active}> </StyledBar>
             </StyledHamburger>
             <StyledMenuList active={active}>
-                <li>{windowsWidth < 600 ? (<Button1 onClick={()=>onClickFun(active, setActive, "#top")}>Home</Button1>):(<Link onClick={()=>handleActive(active, setActive)} to='#aboutMe'>home</Link>)}</li>
-                <li>{windowsWidth < 600 ? (<Button2 onClick={()=>onClickFun(active, setActive,'#aboutMe')}>About Me</Button2>):(<Link onClick={()=>handleActive(active, setActive)} to='#aboutMe'>About Me</Link>)}</li>
-                <li>{windowsWidth < 600 ? (<Button3 onClick={()=>onClickFun(active, setActive,'#offer')}>Offer</Button3>):(<Link onClick={()=>handleActive(active, setActive)} to='#offer'>Offer</Link>)}</li>
-                <li><Link onClick={()=>handleActive(active, setActive)} to='/gallery'>Gallery</Link></li>
-                <li>{windowsWidth < 600 ? (<button onClick={()=>onClickFun(active, setActive,'#contact')}>Contact</button>):(<Link onClick={()=>handleActive(active, setActive)} to='#contact'>Contact</Link>)}</li>
+                <li><StyledLink onClick={()=>handleActive(active, setActive)} to='/'>Home</StyledLink></li>
+                <li><StyledLink onClick={()=>handleActive(active, setActive)} to='/aboutUs'>O nas</StyledLink></li>
+                <li><StyledLink onClick={()=>handleActive(active, setActive)} to='/offer'>Oferta</StyledLink></li>
+                <li><StyledLink onClick={()=>handleActive(active, setActive)} to='/gallery'>Galeria</StyledLink></li>
+                <li><StyledLink onClick={()=>handleActive(active, setActive)} to='/prices'>Cennik</StyledLink></li>
+                <li><StyledLink onClick={()=>handleActive(active, setActive)} to='/contact'>Kontakt</StyledLink></li>
             </StyledMenuList>
         </StyledMenu>
     ); 
