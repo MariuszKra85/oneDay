@@ -36,6 +36,7 @@ justify-content: center;
 
 a{
     margin: 0 15px;
+    color: ${({theme})=> theme.coloros.fontColor}
 }
 
 `
@@ -57,9 +58,9 @@ const Contact = () => {
                 <p>email: Oneday.studio.uk@gmail.com</p>
             </div>
             <StyledSocial>
-                <a href="https://www.facebook.com/norbert.sokolowski.104"><SocialIcon icon='facebook'/></a>
-                <a href="https://www.facebook.com/norbert.sokolowski.104"><SocialIcon icon='linkedin'/></a>
-                <a href="https://www.facebook.com/norbert.sokolowski.104"><SocialIcon/></a>
+                <a href="https://www.facebook.com/norbert.sokolowski.104" aria-label="facebook icon"><SocialIcon icon='facebook'/></a>
+                <a href="https://www.facebook.com/norbert.sokolowski.104" aria-label="LinkedIn icon"><SocialIcon icon='linkedin'/></a>
+                <a href="https://www.facebook.com/norbert.sokolowski.104" aria-label=" twitter Label"><SocialIcon/></a>
             </StyledSocial>
             <Map/>
         </StyledSection>

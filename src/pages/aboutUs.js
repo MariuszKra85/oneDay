@@ -1,4 +1,4 @@
-import { graphql, StaticQuery, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'styled-components';
@@ -52,7 +52,7 @@ Uwielbiam kontakt z ludźmi, dzięki czemu współpraca z klientami jest dla mni
 <StyledImg fluid={photos.allFile.edges[1].node.childImageSharp.fluid}imgStyle={{objectPosition: "30% 50%"}}/>
 <h2>Monika</h2>
 <p>Zdecydowanie częście stoję po przeciwnej stronie aparatu niż Norbert, dlatego potrafie zrozumiec Twoje emocje i wątpliwości podczas sesji. Udzielam porad jak przygotować się do sesji oraz organizacji atelier. 
-Kiedy już chwycę aparat w swoje ręce skupiam się na pokazaniu uczuć i emocji. Na zatrzymaniu czasu i stworzeniu wyjątkowej pamiątki na całe życie. Uwielbiam fotografować dzieci oraz jedzenie 🙂 Wspolpraca z dziećmi jest niezwykła, ponieważ są one naturalne i nieprzewidywalne. Dzięki nim mogę odnaleźć w sobie beztroskość i radość z małych rzeczy. Myślę, że każdy z nas powinien przyjrzeć się dzieciom i cieszyć się z drobnostek. </p>
+Kiedy już chwycę aparat w swoje ręce skupiam się na pokazaniu uczuć i emocji. Na zatrzymaniu czasu i stworzeniu wyjątkowej pamiątki na całe życie. Uwielbiam fotografować dzieci oraz jedzenie <span role="img" aria-label="smile">🙂</span> Wspolpraca z dziećmi jest niezwykła, ponieważ są one naturalne i nieprzewidywalne. Dzięki nim mogę odnaleźć w sobie beztroskość i radość z małych rzeczy. Myślę, że każdy z nas powinien przyjrzeć się dzieciom i cieszyć się z drobnostek. </p>
         </StyledWrapper>
         </Layout>
 

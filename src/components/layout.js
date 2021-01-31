@@ -63,9 +63,9 @@ margin: 50px 0 80px;
       <main>{children}</main>
       <StyledFooter>
       <StyledSocialWrapper>
-    <a href="https://www.facebook.com/norbert.sokolowski.104"><SocialIcon icon='facebook'/></a>
-    <a href="https://www.facebook.com/norbert.sokolowski.104"><SocialIcon icon='linkedin'/></a>
-    <a href="https://www.facebook.com/norbert.sokolowski.104"><SocialIcon icon=''/></a>
+    <a href="https://www.facebook.com/norbert.sokolowski.104" aria-label="facebook Icon" ><SocialIcon icon='facebook'/></a>
+    <a href="https://www.facebook.com/norbert.sokolowski.104" aria-label="LinkedIn Icon"><SocialIcon icon='linkedin'/></a>
+    <a href="https://www.facebook.com/norbert.sokolowski.104" aria-label="Twitter Icon"><SocialIcon icon=''/></a>
     </StyledSocialWrapper>
     <address>
       <h3>Studio One Day</h3>

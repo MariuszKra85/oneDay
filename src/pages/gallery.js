@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, useStaticQuery } from "gatsby"
+import { useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -45,7 +45,6 @@ div{
 `
 
 const Gallery = () => {
-  const [gallery, setGallery] = useState("all")
   const photos = useStaticQuery(
     graphql`
     {
@@ -54,7 +53,7 @@ edges {
   node {
     name
     childImageSharp {
-      fluid(maxWidth: 400) {
+      fluid(maxWidth: 350) {
         ...GatsbyImageSharpFluid_tracedSVG
       }
     }
@@ -67,7 +66,7 @@ edges {
   node {
     name
     childImageSharp {
-      fluid(maxWidth: 400) {
+      fluid(maxWidth: 350) {
         ...GatsbyImageSharpFluid_tracedSVG
       }
     }
@@ -79,7 +78,7 @@ edges {
   node {
     name
     childImageSharp {
-      fluid(maxWidth: 400) {
+      fluid(maxWidth: 350) {
         ...GatsbyImageSharpFluid_tracedSVG
       }
     }

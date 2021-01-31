@@ -5,7 +5,6 @@ import Menu from "./menu"
 import facebook from "../images/social/facebook.svg"
 import linkedin from "../images/social/linkedin.svg"
 import twitter from "../images/social/twitter.svg"
-import Image from "./image"
 
 const StyledWrapper = styled.div`
 width: 90%;
@@ -55,7 +54,7 @@ if(icon=== 'linkedin'){
 const Header = () => <header id="top">
   <StyledWrapper>
 <StyledDiv>
-  <a href="https://www.facebook.com/ONE-DAY-107150937749715/"><SocialIcon icon='facebook'/></a>
+  <a href="https://www.facebook.com/ONE-DAY-107150937749715/" aria-label="facebook Icon"><SocialIcon icon='facebook'/></a>
 </StyledDiv>
     <Menu/>
   </StyledWrapper>

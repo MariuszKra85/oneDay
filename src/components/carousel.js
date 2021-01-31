@@ -33,7 +33,7 @@ const Carousel = () => {
     return (
       <div>
         <Slider {...settings}>
-          <a href="https://www.gatsbyjs.com/plugins/gatsby-plugin-webfonts/?=fonts"><Img fluid={data.Image.edges[0].node.childImageSharp.fluid}/></a>
+          <Img fluid={data.Image.edges[0].node.childImageSharp.fluid}/>
           
           <Img fluid={data.Image.edges[1].node.childImageSharp.fluid}/>
           

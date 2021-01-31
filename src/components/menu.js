@@ -1,8 +1,6 @@
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import useWindowWidth from '../utility/useWindowWidth';
-import scrollTo from 'gatsby-plugin-smoothscroll';
 
 
 const StyledMenu = styled.div`
@@ -10,13 +8,6 @@ const StyledMenu = styled.div`
 margin: 10px 0 0 10px;
 display: flex;
 flex-direction: row;
-
-
-`
-const StyledName = styled.div`
-font-size: 32px;
-font-weight: 700;
-
 
 
 `
@@ -114,7 +105,6 @@ li{
 }
 
 `
-
 const StyledLink = styled(Link)`
 padding: 10px 10px 0 10px;
 border: none;
@@ -128,6 +118,7 @@ transition: all 0.4s;
             border-bottom: 2px solid rgba(0, 0, 0, 1);
         }
 `
+
 
 const handleActive = (active, setActive) => {
     setActive(!active);
