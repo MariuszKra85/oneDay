@@ -16,12 +16,10 @@ height: 100%;
 `
 
 const modalOpen = (id, source,modalState, setActive, setData) =>{
-  console.log(id);
-  console.log(source.edges);
+
   const image = source.edges.find(e => {
     return e.node.name == id;
   });
-  console.log(setData);
  setData(image);
 
   setActive(!modalState);
@@ -149,8 +147,6 @@ edges {
 <GalleryWrapper id='port'>
   {photos ? showImages(shortArrPort, photos.modalPort,modalActive, setModalActive, setModalData) : null}
 </GalleryWrapper>
-{console.log(modalData)}
-{console.log(modalActive)}
 <StyledHeader>Biznesowe</StyledHeader>
 <StyledTitle>Photos</StyledTitle>
 <GalleryWrapper id='biz'>

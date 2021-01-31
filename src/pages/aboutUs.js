@@ -36,7 +36,6 @@ const AboutUs = () => {
     `)
     return (
         <Layout>
-            {console.log(photos)}
             <Image/>
         <StyledWrapper id="aboutMe">
             <h2>Cześć, tu studio One Day!</h2>

@@ -27,7 +27,6 @@ button{
 const Modal = ({img, modalState, changeState}) => {
     return (
         <ModalWrapper modalState={modalState}>
-            {console.log(changeState)}
             {img ? <GatsbyImage fluid={img.node.childImageSharp.fluid}/> : null }
             <button onClick={()=>changeState(!modalState)}>Close</button>
         </ModalWrapper>
