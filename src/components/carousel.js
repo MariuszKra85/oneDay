@@ -4,8 +4,14 @@ import Img from "gatsby-image"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styled from 'styled-components';
 
-const Carousel = () => {
+const StyledWrapper = styled.div`
+max-height: 95vh;
+overflow: hidden;
+`
+
+const Carousel = ({desktop}) => {
   var settings = {
     dots: true,
     infinite: true,
@@ -21,7 +27,20 @@ const Carousel = () => {
         id,
         name,
         childImageSharp{
-          fluid(maxWidth: 600){
+          fluid(maxWidth: 500){
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  }
+  ImageDesk: allFile(filter: {relativePath: {regex: "/carusel/"}}) {
+    edges {
+      node {
+        id,
+        name,
+        childImageSharp{
+          fluid(maxWidth: 1600){
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
@@ -30,16 +49,25 @@ const Carousel = () => {
   }
     }
   `)
+
     return (
-      <div>
-        <Slider {...settings}>
-          <Img fluid={data.Image.edges[0].node.childImageSharp.fluid}/>
-          
-          <Img fluid={data.Image.edges[1].node.childImageSharp.fluid}/>
-          
-          <Img fluid={data.Image.edges[2].node.childImageSharp.fluid}/>
-        </Slider>
-      </div>
+      <StyledWrapper>
+        {desktop? (
+          <Slider {...settings}>
+            <Img fluid={data.ImageDesk.edges[0].node.childImageSharp.fluid}/>
+            <Img fluid={data.ImageDesk.edges[1].node.childImageSharp.fluid}/>
+            <Img fluid={data.ImageDesk.edges[2].node.childImageSharp.fluid}/>
+          </Slider>
+
+        ):(
+          <Slider {...settings}>  
+            <Img fluid={data.Image.edges[0].node.childImageSharp.fluid}/>
+            <Img fluid={data.Image.edges[1].node.childImageSharp.fluid}/>
+            <Img fluid={data.Image.edges[2].node.childImageSharp.fluid}/>
+          </Slider>
+        )}
+        
+      </StyledWrapper>
     );
 }
 

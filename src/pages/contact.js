@@ -36,7 +36,7 @@ justify-content: center;
 
 a{
     margin: 0 15px;
-    color: ${({theme})=> theme.coloros.fontColor}
+    color: ${({theme})=> theme.colors.fontColor}
 }
 
 `

@@ -15,11 +15,13 @@ const StyledHamburger = styled.button`
   display: inline-block;
   cursor: pointer;
   position: fixed;
+  -webkit-transform: translateY(0);
+  transform: translateX(0);
   z-index: 101;
   right: 20px;
-  top: 20px;
-  width: 50px;
-  height: 50px;
+  top: 30px;
+  width: 45px;
+  height: 45px;
   border: none;
   border-radius: 50%;
   padding: 0;
@@ -45,7 +47,7 @@ const StyledHamburger = styled.button`
         
     }
 
-    ${({theme})=> theme.media.tablet}{
+    ${({theme})=> theme.media.desktop.m}{
         display:none;
     }
 
@@ -86,6 +88,7 @@ display: inline-block;
 `
 const StyledMenuList = styled.ul`
 background-color: rgba(${({theme})=> theme.colors.menuBgColor});
+
 position:fixed;
 top:0;
 left:0;
@@ -101,7 +104,21 @@ transition: transform 0.5s;
 transform: ${({active}) => active ? `translateX(0)` : `translateX(-140vw)`};
 
 li{
-    padding: 20px;
+    padding: 25px 30px 10px 0;
+}
+${({theme})=> theme.media.desktop.m}{
+background: none;
+height: 10px;
+transform: translateX(0);
+flex-direction: row;
+align-items:flex-start;
+justify-content: flex-end;
+li{
+    margin-right: 10px;
+    a{
+        color: ${({theme})=> theme.colors.fontColor};
+    }
+}
 }
 
 `
@@ -117,6 +134,7 @@ transition: all 0.4s;
         &:hover{
             border-bottom: 2px solid rgba(0, 0, 0, 1);
         }
+
 `
 
 
