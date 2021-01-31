@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import { useStaticQuery } from "gatsby"
-
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
@@ -28,8 +27,8 @@ const modalOpen = (id, source,modalState, setActive, setData) =>{
 
 const showImages = (images, modalSource,madalState, modalActive, modalData) =>{
   return images.map(e => {
- const widht = Math.floor((Math.floor(Math.random()*10)*15)+100);
-  return (<div style={{width: `${widht}px`, height:  '180px', maxWidth:'50%'}} key={e.node.name}>
+ const widht = Math.floor((Math.floor(Math.random()*4)*30)+100);
+  return (<div style={{width: `${widht}px`, height:  '180px'}} key={e.node.name}>
     <Button onClick={()=>modalOpen(e.node.name, modalSource, madalState, modalActive, modalData)}><StyledImg fluid={e.node.childImageSharp.fluid}  imgStyle={{objectPosition: "50% 20%"}}></StyledImg></Button>
   </div>)
 })

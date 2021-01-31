@@ -3,7 +3,6 @@ import Image from "../components/image"
 import Carousel from '../components/carousel'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import styled from "styled-components"
 import useWindowWidth from '../utility/useWindowWidth'
 import IndexText from "../components/indexText"
 
