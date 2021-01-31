@@ -53,7 +53,7 @@ edges {
   node {
     name
     childImageSharp {
-      fluid(maxWidth: 350) {
+      fluid(maxWidth: 400) {
         ...GatsbyImageSharpFluid_tracedSVG
       }
     }
@@ -66,7 +66,7 @@ edges {
   node {
     name
     childImageSharp {
-      fluid(maxWidth: 350) {
+      fluid(maxWidth: 400) {
         ...GatsbyImageSharpFluid_tracedSVG
       }
     }
@@ -78,7 +78,7 @@ edges {
   node {
     name
     childImageSharp {
-      fluid(maxWidth: 350) {
+      fluid(maxWidth: 400) {
         ...GatsbyImageSharpFluid_tracedSVG
       }
     }
