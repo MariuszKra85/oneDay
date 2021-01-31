@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 
 const StyledWrapper = styled.section`
 width: 90%;
-margin: 20px auto 0;
+margin: 0px auto 0;
 position: relative;
 padding: 20px 0 20px;
 

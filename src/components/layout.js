@@ -38,6 +38,17 @@ if(icon=== 'linkedin'){
 }};
 `
 
+
+const StyledFooter = styled.footer`
+text-align: center;
+margin: 50px 0 80px;
+
+a{
+  color: ${({theme})=>theme.colors.iconColor}
+}
+
+`
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -49,11 +60,6 @@ const Layout = ({ children }) => {
     }
   `)
 
-const StyledFooter = styled.footer`
-text-align: center;
-margin: 50px 0 80px;
-
-`
 
   return (
     <ThemeProvider theme={theme}>
@@ -64,12 +70,12 @@ margin: 50px 0 80px;
       <StyledFooter>
       <StyledSocialWrapper>
     <a href="https://www.facebook.com/norbert.sokolowski.104" aria-label="facebook Icon" ><SocialIcon icon='facebook'/></a>
-    <a href="https://www.facebook.com/norbert.sokolowski.104" aria-label="LinkedIn Icon"><SocialIcon icon='linkedin'/></a>
+    <a href="https://www.facebook.com/norbert.sokolowski.104" aria-label="Link Icon"><SocialIcon icon='linkedin'/></a>
     <a href="https://www.facebook.com/norbert.sokolowski.104" aria-label="Twitter Icon"><SocialIcon icon=''/></a>
     </StyledSocialWrapper>
     <address>
       <h3>Studio One Day</h3>
-      <p>Tel:07368 424514</p>
+      <p>Tel: 07368 424514</p>
       <p>Mail: <a href="mailto:oneday.studio.uk@gmail.com">oneday.studio.uk@gmail.com</a></p>
     </address>
         © {new Date().getFullYear()}, created by

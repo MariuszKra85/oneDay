@@ -53,9 +53,9 @@ const Contact = () => {
             </div>
             <div>
                 <p>Street: Queensway 87 </p>
-                <p>post code: WF61NB</p>
-                <p>tel: 07368424514</p>
-                <p>email: Oneday.studio.uk@gmail.com</p>
+                <p>Post code: WF61NB</p>
+                <p>Tel: 07368424514</p>
+                <p>email: oneday.studio.uk@gmail.com</p>
             </div>
             <StyledSocial>
                 <a href="https://www.facebook.com/norbert.sokolowski.104" aria-label="facebook icon"><SocialIcon icon='facebook'/></a>

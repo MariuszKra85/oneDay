@@ -5,6 +5,7 @@ export const theme = {
         primary: '#6985db',
         fontColor: 'rgb(207, 207, 207)',
         bgColor: 'rgb(25, 28, 36)',
+        iconColor: 'orange',
     },
     media: {
         tablet: '@media (min-width: 760px)',
