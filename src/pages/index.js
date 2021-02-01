@@ -7,16 +7,14 @@ import useWindowWidth from '../utility/useWindowWidth'
 import IndexText from "../components/indexText"
 
 
-
 const IndexPage = () => { 
   let a = useWindowWidth();
   return (
   <Layout>
-    {a = useWindowWidth()}
     <SEO title="Home" />
     {a ? (a < 770 ? ( 
       <>
-    <Image/>
+    <Image />
       <IndexText/>
     <Carousel size="max-width:500px"/>
     </>
