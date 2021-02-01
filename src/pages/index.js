@@ -12,6 +12,7 @@ const IndexPage = () => {
   let a = useWindowWidth();
   return (
   <Layout>
+    {useWindowWidth()}
     <SEO title="Home" />
     {a < 770 ? ( 
       <>
