@@ -12,9 +12,9 @@ const IndexPage = () => {
   let a = useWindowWidth();
   return (
   <Layout>
-    {useWindowWidth()}
+    {a = useWindowWidth()}
     <SEO title="Home" />
-    {a < 770 ? ( 
+    {a ? (a < 770 ? ( 
       <>
     <Image/>
       <IndexText/>
@@ -24,7 +24,7 @@ const IndexPage = () => {
      <>
      <Carousel desktop/>
      <IndexText desktop/>
-     </>)}
+     </>)): 'loading...'}
     
    
     
