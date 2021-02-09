@@ -148,14 +148,13 @@ edges {
       <Layout>
       <SEO title="Gallery"/>
       <Image/>
-      <StyledHeader>Portrety</StyledHeader>
+      <StyledTitle>Portrety</StyledTitle>
       <GalleryWrapper id='port'>
         {console.log(width)}
         {photos ? (width < 1100 ? (showImages(photos.port, photos.modalPort,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.portDesk,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Biznesowe</StyledTitle>
       <GalleryWrapper id='port'>
-        {console.log(width)}
         {photos ? (width < 1100 ? (showImages(photos.port, photos.modalPort,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.portDesk,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Photos</StyledTitle>
