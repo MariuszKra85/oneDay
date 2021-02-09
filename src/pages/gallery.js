@@ -158,78 +158,35 @@ edges {
 }
 
     }
-`
-)
-
-
-  const [shortArrLand, setShortArrLand] =useState(photos.land.edges);
-  const [shortArrPort, setShortArrPort] =useState(photos.port.edges);
-  const [shortArrPortDesk, setShortArrLandDesk] =useState(photos.portDesk.edges);
-  const [shortArrFamily, setShortArrFamily] = useState(photos.family.edges.slice(0,20));
+`)
   const [modalData, setModalData] = useState();
   const [modalActive, setModalActive] = useState(false);
   const width = useWindowWidth();
 
   return(
-    <>
-    {photos ? (
       <Layout>
       <SEO title="Gallery"/>
       <Image/>
       <StyledHeader>Portrety</StyledHeader>
       <GalleryWrapper id='port'>
         {console.log(width)}
-        {photos ? (width < 1100 ? (showImages(shortArrPort, photos.modalPort,modalActive, setModalActive, setModalData)) : showImages(shortArrPort, photos.portDesk,modalActive, setModalActive, setModalData)) : null}
+        {photos ? (width < 1100 ? (showImages(photos.port, photos.modalPort,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.portDesk,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Biznesowe</StyledTitle>
-      <GalleryWrapper id='biz'>
-        {photos ? showImages(shortArrFamily) : null}
+      <GalleryWrapper id='port'>
+        {console.log(width)}
+        {photos ? (width < 1100 ? (showImages(photos.port, photos.modalPort,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.portDesk,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Photos</StyledTitle>
-      <GalleryWrapper id='biz'>
-        {photos ? showImages(shortArrFamily) : null}
-      </GalleryWrapper>
       <StyledTitle>Rodzinna</StyledTitle>
-      <GalleryWrapper id='biz'>
-      
-        {photos ? showImages(shortArrLand) : null}
-      </GalleryWrapper>
       <StyledTitle>Dzieci</StyledTitle>
-      <GalleryWrapper id='biz'>
-      
-        {photos ? showImages(shortArrLand) : null}
-      </GalleryWrapper>
       <StyledTitle>Ciążowa / Noworodki</StyledTitle>
-      <GalleryWrapper id='biz'>
-      
-        {photos ? showImages(shortArrFamily) : null}
-      </GalleryWrapper>
       <StyledTitle>Reportaż</StyledTitle>
-      <GalleryWrapper id='biz'>
-      
-        {photos ? showImages(shortArrPort) : null}
-      </GalleryWrapper>
       <StyledTitle>Reklama</StyledTitle>
-      <GalleryWrapper id='biz'>
-      
-        {photos ? showImages(shortArrPort) : null}
-      </GalleryWrapper>
       <StyledTitle>Natura</StyledTitle>
-      <GalleryWrapper id='biz'>
-      
-        {photos ? showImages(shortArrLand) : null}
-      </GalleryWrapper>
       <StyledTitle>Architektur</StyledTitle>
-      <GalleryWrapper id='biz'>
-      
-        {photos ? showImages(shortArrLand) : null}
-      </GalleryWrapper>
       <Modal img={modalData} modalState={modalActive} changeState={setModalActive}/>
         </Layout>
-      
-    ): (<div>
-lading...
-    </div>)}
-  </>)}
+        )}
 
 export default Gallery
