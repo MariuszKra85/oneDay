@@ -106,6 +106,7 @@ edges {
   const [modalData, setModalData] = useState();
   const [modalActive, setModalActive] = useState(false);
   const width = useWindowWidth();
+  const portArry = photos.port.edges
 
   return(
       <Layout>
@@ -113,12 +114,12 @@ edges {
       <Image/>
       <StyledTitle>Portrety</StyledTitle>
       <GalleryWrapper id='port'>
-        {console.log(width)}
-        {photos ? (width < 1100 ? (showImages(photos.port.edges, photos.port,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
+        {console.log(portArry[0])}
+        {photos ? (width < 1100 ? (showImages(portArry, photos.land,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Biznesowe</StyledTitle>
       <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(photos.port.edges, photos.port,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
+        {photos ? (width < 1100 ? (showImages(portArry, photos.land,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Photos</StyledTitle>
       <StyledTitle>Rodzinna</StyledTitle>
