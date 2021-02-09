@@ -141,14 +141,41 @@ edges {
         {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Biznesowe</StyledTitle>
+      <GalleryWrapper id='port'>
+        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
+      </GalleryWrapper>
       <StyledTitle>Photos</StyledTitle>
+      <GalleryWrapper id='port'>
+        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
+      </GalleryWrapper>
       <StyledTitle>Rodzinna</StyledTitle>
+      <GalleryWrapper id='port'>
+        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
+      </GalleryWrapper>
       <StyledTitle>Dzieci</StyledTitle>
+      <GalleryWrapper id='port'>
+        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
+      </GalleryWrapper>
       <StyledTitle>Ciążowa / Noworodki</StyledTitle>
+      <GalleryWrapper id='port'>
+        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
+      </GalleryWrapper>
       <StyledTitle>Reportaż</StyledTitle>
+      <GalleryWrapper id='port'>
+        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
+      </GalleryWrapper>
       <StyledTitle>Reklama</StyledTitle>
+      <GalleryWrapper id='port'>
+        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
+      </GalleryWrapper>
       <StyledTitle>Natura</StyledTitle>
+      <GalleryWrapper id='port'>
+        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
+      </GalleryWrapper>
       <StyledTitle>Architektur</StyledTitle>
+      <GalleryWrapper id='port'>
+        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
+      </GalleryWrapper>
       <Modal img={modalData} modalState={modalActive} changeState={setModalActive}/>
         </Layout>
         
