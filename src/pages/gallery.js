@@ -28,8 +28,8 @@ const modalOpen = (id, source,modalState, setActive, setData) =>{
 const showImages = (images, modalSource,modalState, modalActive, modalData) =>{
 
   return images.map(e => {
- const widht = Math.floor((Math.floor(Math.random()*4)*50)+100);
-  return (<div style={{width: `${widht}px`, height:  '180px'}} key={e.node.name}>
+ const width = Math.floor((Math.floor(Math.random()*4)*50)+100);
+  return (<div style={{width: `${width}px`, height:  '180px'}} key={e.node.name}>
     <Button onClick={()=>modalOpen(e.node.name, modalSource, modalState, modalActive, modalData)}><StyledImg fluid={e.node.childImageSharp.fluid}  imgStyle={{objectPosition: "50% 20%"}}></StyledImg></Button>
   </div>)
 })
@@ -114,11 +114,11 @@ edges {
       <StyledTitle>Portrety</StyledTitle>
       <GalleryWrapper id='port'>
         {console.log(width)}
-        {photos ? (width < 1100 ? (showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
+        {photos ? (width < 1100 ? (showImages(photos.port.edges, photos.port,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Biznesowe</StyledTitle>
       <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
+        {photos ? (width < 1100 ? (showImages(photos.port.edges, photos.port,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Photos</StyledTitle>
       <StyledTitle>Rodzinna</StyledTitle>
