@@ -34,19 +34,6 @@ const showImages = (images, modalSource,modalState, modalActive, modalData) =>{
   </div>)
 })
 }
-const settGallery = (gal, set, photo) =>{
-  if(gal.length === 3 ){
-    set(photo)
-  }else{
-    set(photo.slice(0, 3))
-  }
-}
-
-const resetGallery = (setLand, setPort, setFamily, photo) => {
-setLand(photo.land.edges.slice(0,3));
-setPort(photo.port.edges.slice(0,3))
-setFamily(photo.family.edges.slice(0,3))
-}
 
 const Button = styled.button`
 background: transparent;
@@ -65,12 +52,6 @@ div{
   flex-grow: 1;
   margin: 8px 4px;
 }
-`
-
-const StyledHeader = styled.h3`
-text-align: center;
-letter-spacing: 1.5px;
-text-transform: uppercase;
 `
 const StyledTitle = styled.h4`
 letter-spacing: 2px;
