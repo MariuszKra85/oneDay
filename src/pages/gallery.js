@@ -4,9 +4,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import GalleryMenu from "../components/galleryMenu"
 import Image from "../components/image"
 import Modal from "../components/modal"
+import useWindowWidth from "../utility/useWindowWidth";
 
 const StyledImg = styled(Img)`
 min-width:100px;
@@ -17,7 +17,7 @@ height: 100%;
 const modalOpen = (id, source,modalState, setActive, setData) =>{
 
   const image = source.edges.find(e => {
-    return e.node.name == id;
+    return e.node.name === id;
   });
  setData(image);
 
@@ -25,11 +25,12 @@ const modalOpen = (id, source,modalState, setActive, setData) =>{
   
 }
 
-const showImages = (images, modalSource,madalState, modalActive, modalData) =>{
+const showImages = (images, modalSource,modalState, modalActive, modalData) =>{
+
   return images.map(e => {
- const widht = Math.floor((Math.floor(Math.random()*4)*30)+100);
+ const widht = Math.floor((Math.floor(Math.random()*4)*50)+100);
   return (<div style={{width: `${widht}px`, height:  '180px'}} key={e.node.name}>
-    <Button onClick={()=>modalOpen(e.node.name, modalSource, madalState, modalActive, modalData)}><StyledImg fluid={e.node.childImageSharp.fluid}  imgStyle={{objectPosition: "50% 20%"}}></StyledImg></Button>
+    <Button onClick={()=>modalOpen(e.node.name, modalSource, modalState, modalActive, modalData)}><StyledImg fluid={e.node.childImageSharp.fluid}  imgStyle={{objectPosition: "50% 20%"}}></StyledImg></Button>
   </div>)
 })
 }
@@ -69,9 +70,12 @@ div{
 const StyledHeader = styled.h3`
 text-align: center;
 letter-spacing: 1.5px;
+text-transform: uppercase;
 `
 const StyledTitle = styled.h4`
 letter-spacing: 2px;
+text-align: center;
+text-transform: uppercase;
 `
 
 const Gallery = () => {
@@ -120,38 +124,75 @@ edges {
   node {
     name
     childImageSharp {
-      fluid(maxWidth: 600) {
+      fluid(maxWidth: 1000) {
         ...GatsbyImageSharpFluid_tracedSVG
       }
     }
   }
   }
 }
+landDesk : allFile(filter: {relativePath: {regex: "/land/"}}) {
+edges {
+  node {
+    name
+    childImageSharp {
+      fluid(maxWidth: 800) {
+        ...GatsbyImageSharpFluid_tracedSVG
+      }
+    }
+  }
+  }
+}
+
+portDesk : allFile(filter: {relativePath: {regex: "/port/"}}) {
+edges {
+  node {
+    name
+    childImageSharp {
+      fluid(maxWidth: 1200) {
+        ...GatsbyImageSharpFluid_tracedSVG
+      }
+    }
+  }
+  }
+}
+
     }
 `
 )
 
-  const [shortArrLand, setShortArrLand] =useState(photos.land.edges.slice(0, 8));
-  const [shortArrPort, setShortArrPort] =useState(photos.port.edges.slice(0, 10));
-  const [shortArrFamily, setShortArrFamily] = useState(photos.family.edges.slice(0,9));
+
+  const [shortArrLand, setShortArrLand] =useState(photos.land.edges);
+  const [shortArrPort, setShortArrPort] =useState(photos.port.edges);
+  const [shortArrPortDesk, setShortArrLandDesk] =useState(photos.portDesk.edges);
+  const [shortArrFamily, setShortArrFamily] = useState(photos.family.edges.slice(0,20));
   const [modalData, setModalData] = useState();
   const [modalActive, setModalActive] = useState(false);
+  const width = useWindowWidth();
 
   return(
-  <Layout>
+  <Layout gallery>
 <SEO title="Gallery"/>
 <Image/>
-<GalleryMenu reset = {()=>resetGallery(setShortArrLand, setShortArrPort, setShortArrFamily, photos)}/>
 <StyledHeader>Portrety</StyledHeader>
 <GalleryWrapper id='port'>
-  {photos ? showImages(shortArrPort, photos.modalPort,modalActive, setModalActive, setModalData) : null}
+  {console.log(width)}
+  {photos ? (width < 1100 ? (showImages(shortArrPort, photos.modalPort,modalActive, setModalActive, setModalData)) : showImages(shortArrPort, photos.portDesk,modalActive, setModalActive, setModalData)) : null}
 </GalleryWrapper>
-<StyledHeader>Biznesowe</StyledHeader>
+<StyledTitle>Biznesowe</StyledTitle>
+<GalleryWrapper id='biz'>
+  {photos ? showImages(shortArrFamily) : null}
+</GalleryWrapper>
 <StyledTitle>Photos</StyledTitle>
 <GalleryWrapper id='biz'>
   {photos ? showImages(shortArrFamily) : null}
 </GalleryWrapper>
-<StyledTitle>Rodzinna / dziecięca</StyledTitle>
+<StyledTitle>Rodzinna</StyledTitle>
+<GalleryWrapper id='biz'>
+
+  {photos ? showImages(shortArrLand) : null}
+</GalleryWrapper>
+<StyledTitle>Dzieci</StyledTitle>
 <GalleryWrapper id='biz'>
 
   {photos ? showImages(shortArrLand) : null}
@@ -172,6 +213,11 @@ edges {
   {photos ? showImages(shortArrPort) : null}
 </GalleryWrapper>
 <StyledTitle>Natura</StyledTitle>
+<GalleryWrapper id='biz'>
+
+  {photos ? showImages(shortArrLand) : null}
+</GalleryWrapper>
+<StyledTitle>Architektur</StyledTitle>
 <GalleryWrapper id='biz'>
 
   {photos ? showImages(shortArrLand) : null}

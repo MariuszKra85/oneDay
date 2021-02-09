@@ -17,6 +17,9 @@ width: 200px;
 height: 200px;
 margin: 20px auto 10px;
 `
+const ImageWrapper = styled.div`
+position: relative;
+`
 
 const AboutUs = () => {
     const photos = useStaticQuery(graphql`
@@ -36,7 +39,9 @@ const AboutUs = () => {
     `)
     return (
         <Layout>
-            <Image/>
+            <ImageWrapper>    
+               <Image/>
+            </ImageWrapper>    
         <StyledWrapper id="aboutMe">
             <h2>Cześć, tu studio One Day!</h2>
             <p>Fotografia i filmowanie to nasza pasja i energia. 

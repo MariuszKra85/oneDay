@@ -5,11 +5,16 @@ import Menu from "./menu"
 import facebook from "../images/social/facebook.svg"
 import linkedin from "../images/social/linkedin.svg"
 import twitter from "../images/social/twitter.svg"
+import { theme } from "../utility/theme"
 
 const StyledWrapper = styled.div`
-width: 90%;
-margin: 20px;
-height: 60px;
+padding: 20px;
+width:100%;
+height: 70px;
+position: fixed;
+z-index:109;
+background-color:${({theme})=> theme.colors.bgColor};
+
 `
 const StyledDiv = styled.div`
 width: 60px;
@@ -19,10 +24,8 @@ width: 60px;
   width: 38px;
   height: 38px;
   content: "";
-position: fixed;
+position: absolute;
 border-radius: 50%;
-top: 31px;
-left: 21px;
 background-color: rgba(10,10,10, 0.6);
 }
 
@@ -30,9 +33,7 @@ background-color: rgba(10,10,10, 0.6);
 
 const SocialIcon = styled.div`
 z-index:102;
-position: fixed;
-top: 30px;
-left: 20px;
+position: absolute;
 width: 40px;
 height: 40px;
 background-color: orange;
@@ -45,9 +46,6 @@ if(icon=== 'linkedin'){
     return(`url(${twitter}) no-repeat center`) 
 } 
 }};
-
-
-
 `
 
 

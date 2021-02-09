@@ -107,6 +107,9 @@ li{
     padding: 25px 30px 10px 0;
 }
 ${({theme})=> theme.media.desktop.m}{
+    position: relative;
+    margin-top: 0;
+    max-width: 1400px;
 background: none;
 height: 10px;
 transform: translateX(0);
@@ -115,6 +118,7 @@ align-items:flex-start;
 justify-content: flex-end;
 li{
     margin-right: 10px;
+    padding: 0 20px 10px 0;
     a{
         color: ${({theme})=> theme.colors.fontColor};
     }

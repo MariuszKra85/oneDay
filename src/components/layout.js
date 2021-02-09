@@ -48,6 +48,11 @@ a{
 }
 
 `
+const LayoutWrapper = styled.section`
+margin: 0 auto;
+max-width: 1400px;
+
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -63,7 +68,7 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-<>
+<LayoutWrapper>
     <GlobalStyle/>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>{children}</main>
@@ -82,7 +87,7 @@ const Layout = ({ children }) => {
         {` `}
         <a href="https://www.gatsbyjs.com">Mariusz Krawczyk</a>
       </StyledFooter>
-    </>
+    </LayoutWrapper>
     </ThemeProvider>
     
   )
