@@ -28,11 +28,24 @@ const modalOpen = (id, source,modalState, setActive, setData) =>{
 const showImages = (images, modalSource,modalState, modalActive, modalData) =>{
 
   return images.map(e => {
- const width = Math.floor((Math.floor(Math.random()*4)*50)+100);
-  return (<div style={{width: `${width}px`, height:  '180px'}} key={e.node.name}>
+ const widht = Math.floor((Math.floor(Math.random()*4)*50)+100);
+  return (<div style={{width: `${widht}px`, height:  '180px'}} key={e.node.name}>
     <Button onClick={()=>modalOpen(e.node.name, modalSource, modalState, modalActive, modalData)}><StyledImg fluid={e.node.childImageSharp.fluid}  imgStyle={{objectPosition: "50% 20%"}}></StyledImg></Button>
   </div>)
 })
+}
+const settGallery = (gal, set, photo) =>{
+  if(gal.length === 3 ){
+    set(photo)
+  }else{
+    set(photo.slice(0, 3))
+  }
+}
+
+const resetGallery = (setLand, setPort, setFamily, photo) => {
+setLand(photo.land.edges.slice(0,3));
+setPort(photo.port.edges.slice(0,3))
+setFamily(photo.family.edges.slice(0,3))
 }
 
 const Button = styled.button`
@@ -52,6 +65,12 @@ div{
   flex-grow: 1;
   margin: 8px 4px;
 }
+`
+
+const StyledHeader = styled.h3`
+text-align: center;
+letter-spacing: 1.5px;
+text-transform: uppercase;
 `
 const StyledTitle = styled.h4`
 letter-spacing: 2px;
@@ -100,27 +119,28 @@ edges {
   }
   }
 }
-    }
-`);
 
+    }
+`
+)
+
+
+  const [shortArrLand, setShortArrLand] =useState(photos.land.edges);
+  const ArrPort =photos.port.edges;
   const [modalData, setModalData] = useState();
   const [modalActive, setModalActive] = useState(false);
   const width = useWindowWidth();
-  const portArry = photos.port.edges
 
   return(
+
       <Layout>
       <SEO title="Gallery"/>
       <Image/>
-      <StyledTitle>Portrety</StyledTitle>
+      <StyledHeader>Portrety</StyledHeader>
       <GalleryWrapper id='port'>
-        {console.log(portArry[0])}
-        {photos ? (width < 1100 ? (showImages(portArry, photos.land,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
+        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Biznesowe</StyledTitle>
-      <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(portArry, photos.land,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
-      </GalleryWrapper>
       <StyledTitle>Photos</StyledTitle>
       <StyledTitle>Rodzinna</StyledTitle>
       <StyledTitle>Dzieci</StyledTitle>
@@ -131,6 +151,7 @@ edges {
       <StyledTitle>Architektur</StyledTitle>
       <Modal img={modalData} modalState={modalActive} changeState={setModalActive}/>
         </Layout>
-        )}
+        
+  )}
 
 export default Gallery
