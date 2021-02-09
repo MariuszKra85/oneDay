@@ -100,46 +100,9 @@ edges {
   }
   }
 }
-  modalPort: allFile(filter: {relativePath: {regex: "/port/"}}) {
-edges {
-  node {
-    name
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid_tracedSVG
-      }
     }
-  }
-  }
-}
-landDesk : allFile(filter: {relativePath: {regex: "/land/"}}) {
-edges {
-  node {
-    name
-    childImageSharp {
-      fluid(maxWidth: 800) {
-        ...GatsbyImageSharpFluid_tracedSVG
-      }
-    }
-  }
-  }
-}
+`);
 
-portDesk : allFile(filter: {relativePath: {regex: "/port/"}}) {
-edges {
-  node {
-    name
-    childImageSharp {
-      fluid(maxWidth: 1200) {
-        ...GatsbyImageSharpFluid_tracedSVG
-      }
-    }
-  }
-  }
-}
-
-    }
-`)
   const [modalData, setModalData] = useState();
   const [modalActive, setModalActive] = useState(false);
   const width = useWindowWidth();
@@ -151,11 +114,11 @@ edges {
       <StyledTitle>Portrety</StyledTitle>
       <GalleryWrapper id='port'>
         {console.log(width)}
-        {photos ? (width < 1100 ? (showImages(photos.port, photos.modalPort,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.portDesk,modalActive, setModalActive, setModalData)) : null}
+        {photos ? (width < 1100 ? (showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Biznesowe</StyledTitle>
       <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(photos.port, photos.modalPort,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.portDesk,modalActive, setModalActive, setModalData)) : null}
+        {photos ? (width < 1100 ? (showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : showImages(photos.port, photos.port,modalActive, setModalActive, setModalData)) : null}
       </GalleryWrapper>
       <StyledTitle>Photos</StyledTitle>
       <StyledTitle>Rodzinna</StyledTitle>
