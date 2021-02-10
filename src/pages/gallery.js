@@ -1,19 +1,19 @@
-import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React, { lazy, Suspense, useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
 import styled from "styled-components"
 import Image from "../components/image"
 import Modal from "../components/modal"
 import useWindowWidth from "../utility/useWindowWidth";
-import GalleryItem from "../components/galleryItem"
+const GalleryItem = lazy(()=>import("../components/galleryItem")); 
 
 const StyledTitle = styled.h4`
 letter-spacing: 2px;
 text-align: center;
 text-transform: uppercase;
 `
+
+const loading = () => <p>Loading...</p>
 
 
 const Gallery = () => {
@@ -27,8 +27,14 @@ const Gallery = () => {
       <Layout>
       <SEO title="Gallery"/>
       <Image/>
+      <Suspense fallback={loading()}>
+
       <GalleryItem title='Portrety' modalActive={modalActive} setModalActive={setModalActive} setModalData={setModalData}></GalleryItem>
+      </Suspense>
+      <Suspense fallback={loading()}>
+
       <GalleryItem title='Rodzina' modalActive={modalActive} setModalActive={setModalActive} setModalData={setModalData}></GalleryItem>
+      </Suspense>
       <StyledTitle>Photos</StyledTitle>
 
       <StyledTitle>Dzieci</StyledTitle>
