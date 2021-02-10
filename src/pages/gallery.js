@@ -5,7 +5,7 @@ import styled from "styled-components"
 import Image from "../components/image"
 import Modal from "../components/modal"
 import useWindowWidth from "../utility/useWindowWidth";
-const GalleryItem = lazy(()=>import("../components/galleryItem")); 
+import GalleryItem from "../components/galleryItem"
 
 const StyledTitle = styled.h4`
 letter-spacing: 2px;
@@ -13,28 +13,38 @@ text-align: center;
 text-transform: uppercase;
 `
 
-const loading = () => <p>Loading...</p>
-
-
 const Gallery = () => {
 
   const [modalData, setModalData] = useState();
   const [modalActive, setModalActive] = useState(false);
   const width = useWindowWidth();
 
+  const isSSR = typeof window === "undefined";
+
+  const loading = ()=> <p>Loading...</p>
+
   return(
 
       <Layout>
       <SEO title="Gallery"/>
       <Image/>
-      <Suspense fallback={loading()}>
+      {
+        !isSSR && (
+          <Suspense fallback={loading()}>
 
-      <GalleryItem title='Portrety' modalActive={modalActive} setModalActive={setModalActive} setModalData={setModalData}></GalleryItem>
-      </Suspense>
-      <Suspense fallback={loading()}>
+          <GalleryItem title='Portrety' modalActive={modalActive} setModalActive={setModalActive} setModalData={setModalData}></GalleryItem>
+          </Suspense>
+        )
+      }
+      {
+        !isSSR && (
+          <Suspense fallback={loading()}>
 
-      <GalleryItem title='Rodzina' modalActive={modalActive} setModalActive={setModalActive} setModalData={setModalData}></GalleryItem>
-      </Suspense>
+          <GalleryItem title='Rodzina' modalActive={modalActive} setModalActive={setModalActive} setModalData={setModalData}></GalleryItem>
+          </Suspense>
+        )
+      }
+
       <StyledTitle>Photos</StyledTitle>
 
       <StyledTitle>Dzieci</StyledTitle>
