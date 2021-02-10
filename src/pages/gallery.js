@@ -7,6 +7,7 @@ import styled from "styled-components"
 import Image from "../components/image"
 import Modal from "../components/modal"
 import useWindowWidth from "../utility/useWindowWidth";
+import GalleryItem from "../components/galleryItem"
 
 const StyledImg = styled(Img)`
 min-width:100px;
@@ -136,47 +137,22 @@ edges {
       <Layout>
       <SEO title="Gallery"/>
       <Image/>
-      <StyledHeader>Portrety</StyledHeader>
-      <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
-      </GalleryWrapper>
-      <StyledTitle>Biznesowe</StyledTitle>
-      <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
-      </GalleryWrapper>
+      <GalleryItem title='Portrety' modalActive={modalActive} setModalActive={setModalActive} setModalData={setModalData}></GalleryItem>
+      <GalleryItem title='Rodzina' modalActive={modalActive} setModalActive={setModalActive} setModalData={setModalData}></GalleryItem>
       <StyledTitle>Photos</StyledTitle>
-      <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
-      </GalleryWrapper>
-      <StyledTitle>Rodzinna</StyledTitle>
-      <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
-      </GalleryWrapper>
+
       <StyledTitle>Dzieci</StyledTitle>
-      <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
-      </GalleryWrapper>
+
       <StyledTitle>Ciążowa / Noworodki</StyledTitle>
-      <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
-      </GalleryWrapper>
+
       <StyledTitle>Reportaż</StyledTitle>
-      <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
-      </GalleryWrapper>
+
       <StyledTitle>Reklama</StyledTitle>
-      <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
-      </GalleryWrapper>
+
       <StyledTitle>Natura</StyledTitle>
-      <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
-      </GalleryWrapper>
+
       <StyledTitle>Architektur</StyledTitle>
-      <GalleryWrapper id='port'>
-        {photos ? (width < 1100 ? (showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : showImages(ArrPort, photos.port,modalActive, setModalActive, setModalData)) : null}
-      </GalleryWrapper>
-      <Modal img={modalData} modalState={modalActive} changeState={setModalActive}/>
+<Modal img={modalData} modalState={modalActive} changeState={setModalActive}/>
         </Layout>
         
   )}
